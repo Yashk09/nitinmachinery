@@ -73,7 +73,6 @@
         /* HERO SECTION */
         .hero {
             height: 85vh;
-            /* IMAGE: Kept exactly as provided */
             background: linear-gradient(rgba(10, 35, 81, 0.85), rgba(10, 35, 81, 0.70)), 
                         url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=2070');
             background-size: cover; background-position: center;
@@ -113,7 +112,6 @@
         .about { padding: 100px 8%; display: flex; gap: 60px; align-items: center; background: white; }
         .about-img { 
             flex: 1; height: 500px; 
-            /* IMAGE: Kept exactly as provided */
             background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2070') center/cover; 
             border-radius: 10px; position: relative; box-shadow: 20px 20px 0px rgba(10, 35, 81, 0.1);
         }
@@ -181,11 +179,22 @@
         
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 768px) {
+            /* Navbar Mobile Fix: Show Links Stacked */
+            nav { flex-direction: column; padding: 15px 5%; }
             
-            /* Hide Desktop Nav Links */
-            .nav-links { display: none; }
-            
-            nav { padding: 15px 5%; }
+            .nav-links { 
+                display: flex; 
+                flex-direction: row; 
+                flex-wrap: wrap; 
+                justify-content: center;
+                gap: 15px; 
+                margin-top: 15px;
+                width: 100%;
+                border-top: 1px solid #eee;
+                padding-top: 15px;
+            }
+
+            .nav-links a { font-size: 0.8rem; } /* Smaller text for links */
             .logo-text { font-size: 1.4rem; }
 
             /* Hero Section */
