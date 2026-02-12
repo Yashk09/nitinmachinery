@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers | Nitin Machinery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0a2351; --accent: #ff4d00; --dark: #1a1a1a; --light: #f4f7f6; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--dark); background-color: var(--light); }
+        .page-header { background: var(--primary); padding: 40px 8%; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .home-btn { text-decoration: none; color: white; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .home-btn:hover { color: var(--accent); }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; }
+        .container { padding: 60px 8%; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); }
+        
+        /* IMAGE BOX STYLING */
+        .prod-img-box { height: 250px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #eee; }
+        .prod-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 15px; } 
+        
+        .prod-info { padding: 25px; }
+        .prod-info h3 { color: var(--primary); font-family: 'Montserrat', sans-serif; margin-bottom: 10px; }
+        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; }
+        .enquire-btn:hover { background: var(--accent); }
+        footer { background: var(--primary); color: white; padding: 30px 8%; text-align: center; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>Transformer Repair Services</h1>
+        <a href="../index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <div class="container">
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div class="prod-img-box">
+                    <img src="images/transformers/rewinding.png" alt="Transformer Rewinding" onerror="this.src='images/transformers/rewinding.jpg'">
+                </div>
+                <div class="prod-info">
+                    <h3>Rewinding & Repair</h3>
+                    <p>Complete rewinding services for industrial transformers using high-grade copper.</p>
+                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="prod-img-box">
+                    <img src="images/transformers/maintenance.png" alt="Maintenance" onerror="this.src='images/transformers/maintenance.jpg'">
+                </div>
+                <div class="prod-info">
+                    <h3>General Maintenance</h3>
+                    <p>Routine checkups of bushings, connections, gaskets, and cooling fins.</p>
+                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Call for Support: +91 98501 30575 | info@nitinmachinery.in</p>
+    </footer>
+
+</body>
+</html>
