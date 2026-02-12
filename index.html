@@ -11,154 +11,72 @@
     <style>
         /* --- CSS DESIGN --- */
         :root {
-            --primary: #0a2351; /* Deep Navy */
-            --accent: #ff4d00;  /* Nitin Orange */
-            --dark: #1a1a1a;
-            --light: #f4f7f6;
-            --white: #ffffff;
-            --whatsapp: #25D366; /* WhatsApp Green */
+            --primary: #0a2351; --accent: #ff4d00; --dark: #1a1a1a;
+            --light: #f4f7f6; --white: #ffffff; --whatsapp: #25D366;
         }
-
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Open Sans', sans-serif; 
-            color: var(--dark); 
-            line-height: 1.6; 
-            background-color: var(--white);
-            overflow-x: hidden; 
-        }
+        body { font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--white); overflow-x: hidden; }
 
-        /* NAVIGATION */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 8%; background: var(--white); 
-            position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .logo-text {
-            font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.8rem;
-            color: var(--primary); text-transform: uppercase; letter-spacing: -1px;
-            display: flex; align-items: center; gap: 12px;
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--primary); text-transform: uppercase; letter-spacing: -1px; display: flex; align-items: center; gap: 12px; }
         .logo-text span { color: var(--accent); }
         .logo-icon { color: var(--accent); font-size: 1.6rem; }
-
         .nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
-        .nav-links a { 
-            text-decoration: none; color: var(--primary); font-weight: 700; 
-            font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; position: relative;
-        }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
         .nav-btn { background: var(--accent); color: white !important; padding: 10px 25px; border-radius: 4px; }
-        .nav-btn:hover { background: #e04400; transform: translateY(-2px); }
 
-        /* HERO SECTION */
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(10, 35, 81, 0.85), rgba(10, 35, 81, 0.70)), 
-                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; padding: 0 8%; color: white;
-        }
+        .hero { height: 85vh; background: linear-gradient(rgba(10, 35, 81, 0.85), rgba(10, 35, 81, 0.70)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; display: flex; align-items: center; padding: 0 8%; color: white; }
         .hero-content { max-width: 800px; animation: fadeUp 1s ease-out forwards; }
         .badge { background: var(--accent); color: white; padding: 5px 15px; font-weight: 700; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 20px; }
         .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; max-width: 600px; }
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 15px 35px; font-weight: 700; text-decoration: none; border-radius: 5px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn:hover { background: #e04400; transform: translateY(-3px); }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 15px 35px; font-weight: 700; text-decoration: none; border-radius: 5px; transition: 0.3s; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* SCROLL ANIMATIONS */
         .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* ABOUT SECTION */
         .about { padding: 100px 8%; display: flex; gap: 60px; align-items: center; background: white; }
-        .about-img { 
-            flex: 1; height: 500px; 
-            background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2070') center/cover; 
-            border-radius: 10px; position: relative; box-shadow: 20px 20px 0px rgba(10, 35, 81, 0.1);
-        }
-        .experience-box {
-            position: absolute; bottom: -30px; right: -30px; background: var(--accent); color: white;
-            padding: 30px; text-align: center; border-radius: 8px; box-shadow: 0 10px 30px rgba(255, 77, 0, 0.3);
-            transition: transform 0.3s;
-        }
-        .experience-box:hover { transform: scale(1.05); }
+        .about-img { flex: 1; height: 500px; background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2070') center/cover; border-radius: 10px; position: relative; box-shadow: 20px 20px 0px rgba(10, 35, 81, 0.1); }
+        .experience-box { position: absolute; bottom: -30px; right: -30px; background: var(--accent); color: white; padding: 30px; text-align: center; border-radius: 8px; box-shadow: 0 10px 30px rgba(255, 77, 0, 0.3); }
         .experience-box .num { display: block; font-size: 3rem; font-weight: 900; line-height: 1; }
-        .experience-box .txt { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
-
         .about-text { flex: 1; }
-        .section-tag { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
-        .about-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; line-height: 1.2; }
-        .about-text p { margin-bottom: 20px; color: #555; font-size: 1.05rem; }
+        .about-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; }
         .features-list { list-style: none; margin-top: 20px; }
         .features-list li { display: flex; align-items: center; margin-bottom: 15px; font-weight: 600; color: var(--primary); }
-        .features-list i { color: var(--accent); margin-right: 15px; font-size: 1.2rem; }
-        
-        .ceo-signature { margin-top: 30px; border-left: 4px solid var(--accent); padding-left: 20px; }
-        .ceo-name { color: var(--primary); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.3rem; margin-bottom: 5px; }
-        .ceo-title { color: #777; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+        .features-list i { color: var(--accent); margin-right: 15px; }
 
-        /* SERVICES GRID */
         .services { padding: 100px 8%; background: var(--light); text-align: center; }
-        .services h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 60px; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .card { 
-            background: white; border-radius: 8px; padding: 0; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; 
-            border-bottom: 4px solid transparent; text-align: left;
-            display: flex; flex-direction: column;
-            text-decoration: none; color: inherit; cursor: pointer; position: relative;
-            overflow: hidden; 
-        }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        .card { background: white; border-radius: 8px; padding: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 4px solid transparent; text-align: left; display: flex; flex-direction: column; text-decoration: none; color: inherit; overflow: hidden; }
         .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent); }
         .card-img-box { width: 100%; height: 220px; background: #fff; overflow: hidden; border-bottom: 1px solid #eee; }
-        .card-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: transform 0.5s ease; }
-        .card:hover .card-img-box img { transform: scale(1.1); }
+        .card-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: 0.5s; }
         .card-content { padding: 25px; }
         .card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
-        .card-desc { font-size: 0.95rem; color: #555; margin-bottom: 20px; line-height: 1.6; }
-        .card-list { list-style: none; padding-top: 15px; border-top: 1px solid #eee; }
-        .card-list li { margin-bottom: 10px; display: flex; align-items: flex-start; color: #444; font-size: 0.9rem; font-weight: 600; }
-        .card-list li::before { content: "✔"; color: var(--accent); margin-right: 10px; font-weight: bold; }
 
-        /* CONTACT SECTION */
         .contact { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; background: white; }
         .contact-info h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 30px; }
         .info-item { display: flex; margin-bottom: 25px; align-items: flex-start; }
         .info-item i { background: rgba(255, 77, 0, 0.1); color: var(--accent); padding: 15px; border-radius: 50%; margin-right: 20px; font-size: 1.2rem; }
-        .info-item div h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 5px; }
-        .contact-link { text-decoration: none; color: #555; transition: 0.3s; display: block; }
+        .contact-link { text-decoration: none; color: #555; transition: 0.3s; display: block; cursor: pointer; }
         .contact-link:hover { color: var(--accent); }
-        .gst-box { margin-top: 30px; padding: 15px; background: #f0f2f5; border-left: 4px solid var(--primary); font-weight: 700; color: var(--primary); }
-        
-        .whatsapp-btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background-color: var(--whatsapp); color: white; padding: 12px 25px;
-            border-radius: 5px; text-decoration: none; font-weight: 700; margin-top: 10px;
-            transition: 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); width: 100%; max-width: 300px;
-        }
-        .whatsapp-btn:hover { background-color: #128C7E; transform: translateY(-3px); }
+        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: var(--whatsapp); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 700; margin-top: 10px; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); width: 100%; max-width: 300px; }
 
         .contact-form { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--primary); font-size: 0.9rem; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem; }
+        .form-group label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
         
         footer { background: var(--primary); color: white; padding: 50px 8%; text-align: center; }
 
         @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 15px 5%; }
-            .nav-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; width: 100%; border-top: 1px solid #eee; padding-top: 15px; }
-            .hero { padding: 100px 5%; height: auto; min-height: 80vh; text-align: center; }
-            .about, .contact { grid-template-columns: 1fr; padding: 60px 5%; flex-direction: column; }
-            .about-img { width: 100%; height: 300px; }
-            .experience-box { right: 10px; bottom: -20px; padding: 20px; }
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 15px; width: 100%; border-top: 1px solid #eee; padding-top: 15px; }
+            .hero { text-align: center; }
+            .about, .contact { grid-template-columns: 1fr; padding: 60px 5%; }
+            .experience-box { right: 10px; bottom: -20px; }
         }
     </style>
 </head>
@@ -185,25 +103,17 @@
 
     <section id="about" class="about reveal">
         <div class="about-img">
-            <div class="experience-box">
-                <span class="num">27</span>
-                <span class="txt">Years of<br>Trust</span>
-            </div>
+            <div class="experience-box"><span class="num">27</span><span class="txt">Years of<br>Trust</span></div>
         </div>
         <div class="about-text">
             <span class="section-tag">Since 1999</span>
             <h2>Powering Industry for Nearly Three Decades</h2>
-            <p>At <strong>Nitin Machinery</strong>, we don't just repair equipment; we ensure the heartbeat of your production line never stops.</p>
-            <p>We understand that in an MIDC unit, downtime is lost revenue. That’s why our approach is built on technical precision and customer longevity.</p>
+            <p>At <strong>Nitin Machinery</strong>, we ensure the heartbeat of your production line never stops. We understand that in an MIDC unit, downtime is lost revenue.</p>
             <ul class="features-list">
                 <li><i class="fas fa-check-circle"></i> <strong>Technical Precision:</strong> High-grade materials & rigorous testing.</li>
                 <li><i class="fas fa-check-circle"></i> <strong>Long-term Relationships:</strong> We prioritize client success over quick fixes.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Local Speed:</strong> Rapid response for Sinnar & Nashik units.</li>
             </ul>
-            <div class="ceo-signature">
-                <div class="ceo-name">Nitin Katyare</div>
-                <div class="ceo-title">CEO & Founder</div>
-            </div>
+            <div class="ceo-signature"><div class="ceo-name">Nitin Katyare</div><div class="ceo-title">CEO & Founder</div></div>
         </div>
     </section>
 
@@ -212,94 +122,19 @@
         <div class="service-grid">
             <a href="products/pumps.html" class="card reveal">
                 <div class="card-img-box"><img src="products/images/pump-sales/submersible.png" alt="Pumps"></div>
-                <div class="card-content">
-                    <h3>Pump Sales & Spares</h3>
-                    <p class="card-desc">Authorized dealers for leading industrial pumps. Complete sales support and genuine spare parts.</p>
-                    <ul class="card-list">
-                        <li>New Submersible & Open-well</li>
-                        <li>Stockist of Genuine Spares</li>
-                        <li>Sales of New AC/DC Motors</li>
-                    </ul>
-                </div>
-            </a>
-            <a href="products/engines.html" class="card reveal">
-                <div class="card-img-box"><img src="products/images/engine/overhaul.png" alt="Engines"></div>
-                <div class="card-content">
-                    <h3>Diesel/Petrol Repair</h3>
-                    <p class="card-desc">Specialized workshop for construction and industrial engines.</p>
-                    <ul class="card-list">
-                        <li>Repairing of Vibrators & Mixers</li>
-                        <li>Petrol/Diesel Engine Overhauling</li>
-                        <li>Genuine Spares (Pistons, Filters)</li>
-                    </ul>
-                </div>
+                <div class="card-content"><h3>Pump Sales & Spares</h3><p>Authorized dealers for leading industrial pumps.</p></div>
             </a>
             <a href="products/rewinding.html" class="card reveal">
                 <div class="card-img-box"><img src="products/images/rewinding/AC_motor_rewinding.png" alt="Rewinding"></div>
-                <div class="card-content">
-                    <h3>Motor Rewinding</h3>
-                    <p class="card-desc">Precision rewinding using high-grade copper and Class-H insulation.</p>
-                    <ul class="card-list">
-                        <li>AC/DC Motor Rewinding</li>
-                        <li>High HP Motor Restoration</li>
-                        <li>Stator & Rotor Varnishing</li>
-                    </ul>
-                </div>
+                <div class="card-content"><h3>Motor Rewinding</h3><p>Precision rewinding for all AC/DC motors.</p></div>
             </a>
-            <a href="products/press.html" class="card reveal">
-                <div class="card-img-box"><img src="products/images/press/bearing.png" alt="Press"></div>
-                <div class="card-content">
-                    <h3>400-Ton Hydraulic Press</h3>
-                    <ul class="card-list">
-                        <li>Removal of Seized Bearings</li>
-                        <li>Heavy Pin & Bushing Work</li>
-                        <li>Industrial Straightening Jobs</li>
-                    </ul>
-                </div>
-            </a>
-            <a href="products/hoses.html" class="card reveal">
-                <div class="card-img-box"><img src="products/images/hoses/crimping.png" alt="Hoses"></div>
-                <div class="card-content">
-                    <h3>Hose Pipe Crimping</h3>
-                    <ul class="card-list">
-                        <li>High-Pressure Hydraulic Hoses</li>
-                        <li>Custom Fittings Assembly</li>
-                        <li>Precision Machine Crimping</li>
-                    </ul>
-                </div>
-            </a>
-            <a href="products/transformers.html" class="card reveal">
-                <div class="card-img-box"><img src="products/images/transformers/rewinding.png" alt="Transformers"></div>
-                <div class="card-content">
-                    <h3>Transformer Services</h3>
-                    <ul class="card-list">
-                        <li>Transformer Rewinding</li>
-                        <li>Oil Filtration & Testing</li>
-                        <li>General Maintenance</li>
-                    </ul>
-                </div>
-            </a>
-             <a href="products/repair.html" class="card reveal">
+            <a href="products/repair.html" class="card reveal">
                 <div class="card-img-box"><img src="products/images/repair/submersible.png" alt="Repair"></div>
-                <div class="card-content">
-                    <h3>Pump Repair Services</h3>
-                    <ul class="card-list">
-                        <li>Submersible & Centrifugal Repair</li>
-                        <li>Impeller & Seal Change</li>
-                        <li>Site Installation Support</li>
-                    </ul>
-                </div>
+                <div class="card-content"><h3>Pump Repair Services</h3><p>Fast repair for submersible & centrifugal pumps.</p></div>
             </a>
             <a href="products/amc.html" class="card reveal">
                 <div class="card-img-box"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" style="object-fit: cover;" alt="AMC"></div>
-                <div class="card-content">
-                    <h3>Annual Maintenance (AMC)</h3>
-                    <ul class="card-list">
-                        <li>Factory-wide Motor Inspection</li>
-                        <li>Priority Breakdown Response</li>
-                        <li>Reduced Repair Costs</li>
-                    </ul>
-                </div>
+                <div class="card-content"><h3>Annual Maintenance (AMC)</h3><p>Scheduled factory-wide inspections.</p></div>
             </a>
         </div>
     </section>
@@ -308,38 +143,22 @@
         <div class="contact-info">
             <h2>Contact Us</h2>
             <div class="info-item"><i class="fas fa-phone-alt"></i>
-                <div><h4>Call Us (24/7)</h4>
-                    <a href="tel:+919850130575" class="contact-link">+91 98501 30575</a>
-                    <a href="tel:+919699577380" class="contact-link">+91 96995 77380</a>
-                </div>
+                <div><h4>Call Us (24/7)</h4><a href="tel:+919850130575" class="contact-link">+91 98501 30575</a></div>
             </div>
             <div class="info-item"><i class="fas fa-envelope"></i>
                 <div><h4>Email Us</h4>
-                    <a href="googlegmail:///co?to=info@nitinmachinery.in" onclick="window.location.href='mailto:info@nitinmachinery.in'; return false;" class="contact-link">info@nitinmachinery.in</a>
+                    <span onclick="openEmail()" class="contact-link">info@nitinmachinery.in</span>
                 </div>
             </div>
             <div class="info-item"><i class="fas fa-map-marker-alt"></i>
-                <div><h4>Visit Workshop</h4>
-                    <a href="https://maps.google.com/?q=Nitin+Machinery+Sinnar" target="_blank" class="contact-link">
-                        <p>593, Near Ronak Lawn, Pune Highway,<br>Sinnar, Nashik, Maharashtra - 422103</p>
-                    </a>
-                </div>
+                <div><h4>Visit Workshop</h4><a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="contact-link"><p>Sinnar, Nashik, Maharashtra - 422103</p></a></div>
             </div>
-            <a href="https://wa.me/919850130575?text=Hello%20Nitin%20Machinery" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-            <div class="gst-box">GSTIN: 27AHVPK8677P1ZW</div>
+            <a href="https://wa.me/919850130575" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
         <div class="contact-form">
-            <form onsubmit="alert('Thank you! We have received your inquiry.'); return false;">
+            <form onsubmit="alert('Inquiry Sent!'); return false;">
                 <div class="form-group"><label>Your Name</label><input type="text" required></div>
-                <div class="form-group"><label>Your Email</label><input type="email" required></div>
-                <div class="form-group"><label>Company Name</label><input type="text" required></div>
                 <div class="form-group"><label>Mobile Number</label><input type="tel" required></div>
-                <div class="form-group"><label>Service Required</label>
-                    <select>
-                        <option>Pump Sales & Spares</option><option>Diesel/Petrol Repair</option><option>Motor Rewinding</option><option>400-Ton Hydraulic Press</option><option>Hose Pipe Crimping</option><option>Transformer Services</option><option>Pump Repair Services</option><option>Annual Maintenance (AMC)</option>
-                    </select>
-                </div>
-                <div class="form-group"><label>Message</label><textarea rows="4"></textarea></div>
                 <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
             </form>
         </div>
@@ -348,6 +167,24 @@
     <footer><p>© 2026 <strong>Nitin Machinery</strong>. All Rights Reserved.</p></footer>
 
     <script>
+        // SMART EMAIL SCRIPT
+        function openEmail() {
+            const email = "info@nitinmachinery.in";
+            // Check if user is on a mobile device
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Try opening Gmail App specifically, fallback to standard mailto
+                window.location.href = "googlegmail:///co?to=" + email;
+                setTimeout(function() {
+                    window.location.href = "mailto:" + email;
+                }, 500);
+            } else {
+                // On Laptop: Open Gmail Web Composer in a new tab
+                window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + email, "_blank");
+            }
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
         });
