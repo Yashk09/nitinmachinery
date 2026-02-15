@@ -14,21 +14,81 @@
         .home-btn { text-decoration: none; color: white; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
         .home-btn:hover { color: var(--accent); }
         h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; }
+        
         .container { padding: 60px 8%; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        
+        /* GRID SETUP */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+
+        /* CARD STYLING FOR ALIGNMENT */
+        .product-card { 
+            background: white; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: 0.3s; 
+            /* Flex properties to align buttons */
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+        }
         .product-card:hover { transform: translateY(-5px); }
         
-        /* IMAGE BOX STYLING */
-        .prod-img-box { height: 250px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #eee; }
+        /* IMAGE BOX */
+        .prod-img-box { 
+            height: 250px; 
+            background: #fff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            border-bottom: 1px solid #eee; 
+            flex-shrink: 0; /* Prevents image from shrinking */
+        }
         .prod-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 15px; } 
         
-        .prod-info { padding: 25px; }
+        /* INFO BOX */
+        .prod-info { 
+            padding: 25px; 
+            /* Flex properties to push button down */
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1; 
+        }
         .prod-info h3 { color: var(--primary); font-family: 'Montserrat', sans-serif; margin-bottom: 10px; }
-        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
-        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; }
+        
+        .prod-info p { 
+            font-size: 0.9rem; 
+            color: #666; 
+            margin-bottom: 20px; 
+            line-height: 1.6; 
+            flex-grow: 1; /* This makes the text take up available space, pushing button down */
+        }
+        
+        .enquire-btn { 
+            display: block; 
+            width: 100%; 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 12px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: 700; 
+            transition: 0.3s; 
+            margin-top: auto; /* Forces button to the bottom */
+        }
         .enquire-btn:hover { background: var(--accent); }
+        
         footer { background: var(--primary); color: white; padding: 30px 8%; text-align: center; margin-top: 40px; }
+        
+        @media (max-width: 768px) {
+            .page-header { flex-direction: column; gap: 15px; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -43,7 +103,7 @@
 
             <div class="product-card">
                 <div class="prod-img-box">
-                    <img src="images/engine/overhaul.png" alt="Engine Repair" onerror="this.src='images/engine/overhaul.jpg'">
+                    <img src="images/engine/overhaul.png" alt="Engine Repair" onerror="this.src='https://via.placeholder.com/400x300?text=Engine+Repair'">
                 </div>
                 <div class="prod-info">
                     <h3>Engine Overhauling</h3>
@@ -54,22 +114,33 @@
 
             <div class="product-card">
                 <div class="prod-img-box">
-                    <img src="images/engine/spares.png" alt="Spares" onerror="this.src='images/engine/spares.jpg'">
+                    <img src="images/engine/spares.png" alt="Spares" onerror="this.src='https://via.placeholder.com/400x300?text=Spares'">
                 </div>
                 <div class="prod-info">
                     <h3>Genuine Spare Parts</h3>
-                    <p>We stock pistons, rings, filters, and spark plugs for all major construction equipment brands.</p>
+                    <p>We stock pistons, rings, filters, and spark plugs for all major construction equipment brands. We carry a complete range of parts for both diesel and petrol engines.</p>
+                    <a href="../index.html#contact" class="enquire-btn">Check Availability</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="prod-img-box">
+                    <img src="images/engine/service.png" alt="Servicing" onerror="this.src='https://via.placeholder.com/400x300?text=Servicing'">
+                </div>
+                <div class="prod-info">
+                    <h3>Preventative Servicing</h3>
+                    <p>Regular oil changes, filter cleaning, and tuning to keep your machines running smoothly.</p>
                     <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="prod-img-box">
-                    <img src="images/engine/service.png" alt="Servicing" onerror="this.src='images/engine/service.jpg'">
+                    <img src="images/engine/canopy.png" alt="Generator Repair" onerror="this.src='https://via.placeholder.com/400x300?text=Canopy+Repair'">
                 </div>
                 <div class="prod-info">
-                    <h3>Preventative Servicing</h3>
-                    <p>Regular oil changes, filter cleaning, and tuning to keep your machines running smoothly.</p>
+                    <h3>Generator repair (canopy)</h3>
+                    <p>Mechanical repair of the diesel engine inside silent canopy generators. Breakdown support and maintenance.</p>
                     <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
