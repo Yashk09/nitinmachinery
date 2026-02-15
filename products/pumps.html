@@ -16,36 +16,33 @@
         h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; }
         .container { padding: 60px 8%; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        
+        /* ALIGNMENT CSS */
+        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; display: flex; flex-direction: column; height: 100%; }
         .product-card:hover { transform: translateY(-5px); }
-        .prod-img-box { height: 200px; background: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        /* Image fit set to 'contain' so the whole pump is visible */
+        .prod-img-box { height: 200px; background: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
         .prod-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px; } 
-        .prod-info { padding: 25px; }
+        .prod-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
         .prod-info h3 { color: var(--primary); font-family: 'Montserrat', sans-serif; margin-bottom: 10px; }
-        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
-        .prod-list { list-style: none; margin-bottom: 20px; font-size: 0.85rem; color: #555; }
+        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; flex-grow: 1; }
+        .prod-list { list-style: none; margin-bottom: 20px; font-size: 0.85rem; color: #555; flex-grow: 1; }
         .prod-list li { margin-bottom: 5px; }
         .prod-list li::before { content: "•"; color: var(--accent); font-weight: bold; margin-right: 5px; }
-        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; }
+        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; margin-top: auto; }
         .enquire-btn:hover { background: var(--accent); }
+        
         footer { background: var(--primary); color: white; padding: 30px 8%; text-align: center; margin-top: 40px; }
     </style>
 </head>
 <body>
-
     <div class="page-header">
         <h1>Pump Sales & Spares</h1>
         <a href="../index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
-
     <div class="container">
         <div class="product-grid">
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/pump-sales/submersible.png" alt="Submersible Pump">
-                </div>
+                <div class="prod-img-box"><img src="images/pump-sales/submersible.png" alt="Submersible Pump"></div>
                 <div class="prod-info">
                     <h3>Submersible Pumps</h3>
                     <p>High-efficiency pumps for agriculture and industrial borewells.</p>
@@ -54,14 +51,11 @@
                         <li>Stainless Steel Body</li>
                         <li>Energy Efficient</li>
                     </ul>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Pump Sales %26 Spares#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/pump-sales/centrifugal.png" alt="Centrifugal Pump" onerror="this.src='https://images.unsplash.com/photo-1531297461136-82lw8fca33f3?auto=format&fit=crop&q=80&w=1000'"> 
-                </div>
+                <div class="prod-img-box"><img src="images/pump-sales/centrifugal.png" alt="Centrifugal Pump" onerror="this.src='https://images.unsplash.com/photo-1531297461136-82lw8fca33f3?auto=format&fit=crop&q=80&w=1000'"></div>
                 <div class="prod-info">
                     <h3>Centrifugal Pumps</h3>
                     <p>Heavy-duty pumps for industrial water transfer and cooling systems.</p>
@@ -70,14 +64,11 @@
                         <li>Monoblock Options</li>
                         <li>Easy Maintenance</li>
                     </ul>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Pump Sales %26 Spares#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/pump-sales/spares.png" alt="Bearings and Bushings" onerror="this.src='https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1000'">
-                </div>
+                <div class="prod-img-box"><img src="images/pump-sales/spares.png" alt="Bearings and Bushings" onerror="this.src='https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1000'"></div>
                 <div class="prod-info">
                     <h3>Genuine Spare Parts</h3>
                     <p>Original spare parts for major pump brands (Kirloskar, Crompton, etc).</p>
@@ -86,14 +77,11 @@
                         <li>Mechanical Seals</li>
                         <li>Bearings & Bushes</li>
                     </ul>
-                    <a href="../index.html#contact" class="enquire-btn">Check Availability</a>
+                    <a href="../index.html?service=Pump Sales %26 Spares#contact" class="enquire-btn">Check Availability</a>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="prod-img-box">
-                     <img src="images/pump-sales/panels.png" alt="Electrical Control Panel" onerror="this.src='https://images.unsplash.com/photo-1565439396686-6e9386d3893c?auto=format&fit=crop&q=80&w=1000'">
-                </div>
+                <div class="prod-img-box"><img src="images/pump-sales/panels.png" alt="Electrical Control Panel" onerror="this.src='https://images.unsplash.com/photo-1565439396686-6e9386d3893c?auto=format&fit=crop&q=80&w=1000'"></div>
                 <div class="prod-info">
                     <h3>Starters & Panels</h3>
                     <p>Electrical control panels to protect your motors from voltage fluctuations.</p>
@@ -102,16 +90,11 @@
                         <li>DOL Starters</li>
                         <li>Auto-Switches</li>
                     </ul>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Pump Sales %26 Spares#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
         </div>
     </div>
-
-    <footer>
-        <p>Call for Parts: +91 98501 30575 | info@nitinmachinery.in</p>
-    </footer>
-
+    <footer><p>Call for Parts: +91 98501 30575 | info@nitinmachinery.in</p></footer>
 </body>
 </html>
