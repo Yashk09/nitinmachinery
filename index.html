@@ -250,6 +250,7 @@
                 <div class="card-img-box"><img src="products/images/press/bearing.png" alt="Press"></div>
                 <div class="card-content">
                     <h3>400-Ton Hydraulic Press</h3>
+                    <p class="card-desc">Removal of Seized Bearings, Heavy Pin & Bushing Work.</p>
                     <ul class="card-list">
                         <li>Removal of Seized Bearings</li>
                         <li>Heavy Pin & Bushing Work</li>
@@ -261,6 +262,7 @@
                 <div class="card-img-box"><img src="products/images/hoses/crimping.png" alt="Hoses"></div>
                 <div class="card-content">
                     <h3>Hose Pipe Crimping</h3>
+                    <p class="card-desc">High-Pressure Hydraulic Hoses and Custom Fittings Assembly.</p>
                     <ul class="card-list">
                         <li>High-Pressure Hydraulic Hoses</li>
                         <li>Custom Fittings Assembly</li>
@@ -272,6 +274,7 @@
                 <div class="card-img-box"><img src="products/images/transformers/rewinding.png" alt="Transformers"></div>
                 <div class="card-content">
                     <h3>Transformer Services</h3>
+                    <p class="card-desc">Rewinding, Oil Filtration, and Maintenance.</p>
                     <ul class="card-list">
                         <li>Transformer Rewinding</li>
                         <li>Oil Filtration & Testing</li>
@@ -283,6 +286,7 @@
                 <div class="card-img-box"><img src="products/images/repair/submersible.png" alt="Repair"></div>
                 <div class="card-content">
                     <h3>Pump Repair Services</h3>
+                    <p class="card-desc">Submersible & Centrifugal Repair, Impeller & Seal Change.</p>
                     <ul class="card-list">
                         <li>Submersible & Centrifugal Repair</li>
                         <li>Impeller & Seal Change</li>
@@ -294,6 +298,7 @@
                 <div class="card-img-box"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" style="object-fit: cover;" alt="AMC"></div>
                 <div class="card-content">
                     <h3>Annual Maintenance (AMC)</h3>
+                    <p class="card-desc">Factory-wide Motor Inspection and Breakdown Response.</p>
                     <ul class="card-list">
                         <li>Factory-wide Motor Inspection</li>
                         <li>Priority Breakdown Response</li>
@@ -334,11 +339,20 @@
                 <div class="form-group"><label>Your Email</label><input type="email" required></div>
                 <div class="form-group"><label>Company Name</label><input type="text" required></div>
                 <div class="form-group"><label>Mobile Number</label><input type="tel" required></div>
+                
                 <div class="form-group"><label>Service Required</label>
-                    <select>
-                        <option>Pump Sales & Spares</option><option>Diesel/Petrol Repair</option><option>Motor Rewinding</option><option>400-Ton Hydraulic Press</option><option>Hose Pipe Crimping</option><option>Transformer Services</option><option>Pump Repair Services</option><option>Annual Maintenance (AMC)</option>
+                    <select id="serviceSelect">
+                        <option>Pump Sales & Spares</option>
+                        <option>Diesel/Petrol Repair</option>
+                        <option>Motor Rewinding</option>
+                        <option>400-Ton Hydraulic Press</option>
+                        <option>Hose Pipe Crimping</option>
+                        <option>Transformer Services</option>
+                        <option>Pump Repair Services</option>
+                        <option>Annual Maintenance (AMC)</option>
                     </select>
                 </div>
+                
                 <div class="form-group"><label>Message</label><textarea rows="4"></textarea></div>
                 <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
             </form>
@@ -352,6 +366,21 @@
             entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
         });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // --- NEW SCRIPT FOR AUTO SELECTING SERVICES ---
+        window.onload = function() {
+            // Get the URL parameters (e.g., ?service=Motor Rewinding)
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+
+            if (service) {
+                // Find the dropdown and set the value
+                const selectBox = document.getElementById('serviceSelect');
+                if(selectBox) {
+                    selectBox.value = service;
+                }
+            }
+        };
     </script>
 </body>
 </html>
