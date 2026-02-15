@@ -16,70 +16,54 @@
         h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; }
         .container { padding: 60px 8%; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        
+        /* ALIGNMENT CSS */
+        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; display: flex; flex-direction: column; height: 100%; }
         .product-card:hover { transform: translateY(-5px); }
-        
-        /* IMAGE BOX STYLING */
-        .prod-img-box { height: 250px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #eee; }
+        .prod-img-box { height: 250px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #eee; flex-shrink: 0; }
         .prod-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 15px; } 
-        
-        .prod-info { padding: 25px; }
+        .prod-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
         .prod-info h3 { color: var(--primary); font-family: 'Montserrat', sans-serif; margin-bottom: 10px; }
-        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
-        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; }
+        .prod-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; flex-grow: 1; }
+        .enquire-btn { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; margin-top: auto; }
         .enquire-btn:hover { background: var(--accent); }
+        
         footer { background: var(--primary); color: white; padding: 30px 8%; text-align: center; margin-top: 40px; }
     </style>
 </head>
 <body>
-
     <div class="page-header">
         <h1>Motor Rewinding Services</h1>
         <a href="../index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
-
     <div class="container">
         <div class="product-grid">
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/rewinding/AC_motor_rewinding.png" alt="AC Motor">
-                </div>
+                <div class="prod-img-box"><img src="images/rewinding/AC_motor_rewinding.png" alt="AC Motor"></div>
                 <div class="prod-info">
                     <h3>AC Motor Rewinding</h3>
                     <p>Expert rewinding for induction motors using Class-H insulation.</p>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Motor Rewinding#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/rewinding/DC_motor_repair.png" alt="DC Motor">
-                </div>
+                <div class="prod-img-box"><img src="images/rewinding/DC_motor_repair.png" alt="DC Motor"></div>
                 <div class="prod-info">
                     <h3>DC Motor Repair</h3>
                     <p>Specialized repair for DC motors, including armature rewinding.</p>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Motor Rewinding#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="prod-img-box">
-                    <img src="images/rewinding/Varnishing-Heating.png" alt="Varnishing">
-                </div>
+                <div class="prod-img-box"><img src="images/rewinding/Varnishing-Heating.png" alt="Varnishing"></div>
                 <div class="prod-info">
                     <h3>Varnishing & Heating</h3>
                     <p>Professional varnishing and oven heating for long insulation life.</p>
-                    <a href="../index.html#contact" class="enquire-btn">Get Quote</a>
+                    <a href="../index.html?service=Motor Rewinding#contact" class="enquire-btn">Get Quote</a>
                 </div>
             </div>
-
         </div>
     </div>
-
-    <footer>
-        <p>Call for Support: +91 98501 30575 | info@nitinmachinery.in</p>
-    </footer>
-
+    <footer><p>Call for Support: +91 98501 30575 | info@nitinmachinery.in</p></footer>
 </body>
 </html>
